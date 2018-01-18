@@ -10,4 +10,4 @@ thisPath <- getwd()
 
 data(soybean_cn)
 
-plotPermutations(soybean_cn, nPerm = 10, topThresh = 50, outDir = getwd())
+plotPermutations(soybean_ir, nPerm = 10, topThresh = 50, outDir = getwd())
