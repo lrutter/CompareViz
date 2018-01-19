@@ -8,6 +8,6 @@ library(bigPint)
 
 thisPath <- getwd()
 
-data(soybean_cn)
+data(soybean_ir)
 
 plotPermutations(soybean_ir, nPerm = 10, topThresh = 50, outDir = getwd())
