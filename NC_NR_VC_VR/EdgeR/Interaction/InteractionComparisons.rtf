@@ -1,0 +1,62 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1561\cocoasubrtf200
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\froman\fcharset0 Times-Roman;}
+{\colortbl;\red255\green255\blue255;\red0\green0\blue0;}
+{\*\expandedcolortbl;;\cssrgb\c0\c0\c0;}
+\margl1440\margr1440\vieww13700\viewh13800\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Forming contrasts from edgeR Section 3.2.4\
+\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 NoVirus    CDiet      NC\
+NoVirus    RDiet      NR\
+Virus        CDiet       VC\
+Virus        RDiet       VR\
+\
+1) Genes always higher in N than in V\
+- Form 4 contrasts NC-VC, NR-VR, NC-VR, NR-VC and see which ones higher in all four contrasts\
+\
+2) Genes always higher in V than in N\
+- Form 4 contrasts VC-NC, VR-NR, VR-NC, VC-NR and see which ones higher in all four contrasts\
+\
+3) Genes always higher in C than in R\
+- Form 4 contrasts NC-NR, NC-VR, VC-NR, VC-VR and see which ones higher in all four contrasts\
+\
+4) Genes always higher in R than in C\
+- Form 4 contrasts VR-VC, VR-NC, NR-VC, NR-NC and see which ones higher in all four contrasts\
+\
+5) Genes always higher in N than in V, regardless of diet\
+- Form 2 contrasts NC-VC and NR-VR and see which ones higher in both contrasts\
+\
+6) Genes always higher in V than in N, regardless of diet\
+- Form 2 contrasts VC-NC and VR-NR and see which ones higher in both contrasts\
+\
+7) Genes always higher in C than in R, regardless of virus\
+- Form 2 contrasts NC-NR and VC-VR and see which ones higher in both contrasts\
+\
+8) Genes always higher in R than in C, regardless of virus\
+- Form 2 contrasts VR-VC and NR-NC and see which ones higher in both contrasts\
+\
+9) Difference between C and R is large compared to difference between V and N.\
+- Form 3 contrasts NC-VC, NR-VR, and (NC+VC)/2-(NR+VR)/2. We can confidently make this assertion for genes for which the third contrast is far more significant than the first two. Even if NC-VC and NR-VR are statistically significant, we could still look for genes for which the fold change for (NC+VC)/2-(NR+VR)/2 are much larger than those for NC-VC and NR-VR.\
+\
+10) Difference between V and N is large compared to difference between C and R.
+\f1 \cf2 \expnd0\expndtw0\kerning0
+\
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 - Form 3 contrasts VR-VC, NR-NC, and (VR+VC)/2-(NR+NC)/2. We can confidently make this assertion for genes for which the third contrast is far more significant than the first two. Even if VR-VC and NR-NC are statistically significant, we could still look for genes for which the fold change for (VR+VC)/2-(NR+NC)/2 are much larger than those for VR-VC and NR-NC.\
+\
+11) Difference between C over R is the same, regardless of virus\
+- Contrast (NC+VC)/2-(NR+VR)/2 is significant for many genes but (NC-NR)-(VC-VR) (the interaction) is not.\
+\
+12) Difference between R over C is the same, regardless of virus\
+- Contrast (NR+VR)/2-(NC+VC)/2 is significant for many genes but (NR-NC)-(VR-VC) (the interaction) is not.
+\f1 \cf2 \expnd0\expndtw0\kerning0
+\
+
+\f0 \cf0 \kerning1\expnd0\expndtw0 \
+13) Difference between N over V is the same, regardless of diet\
+- Contrast (NC+NR)/2-(VC+VR)/2 is significant for many genes but (NC-VC)-(NR-VR) (the interaction) is not.\
+\
+14) Difference between V over N is the same, regardless of diet\
+- Contrast (VC+VR)/2-(NC+NR)/2 is significant for many genes but (VC-NC)-(VR-NR) (the interaction) is not.}
