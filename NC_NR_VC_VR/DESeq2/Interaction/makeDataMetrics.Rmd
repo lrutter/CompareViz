@@ -1,0 +1,57 @@
+---
+title: "Honey Bees - DESeq Interaction"
+author: Lindsay Rutter
+output:
+  packagedocs::package_docs:
+    toc: true
+    toc_collapse: true
+vignette: >
+  %\VignetteEngine{packagedocs::redirect}
+---
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+
+```{r global_options, include=FALSE}
+# R output pre blocks are styled by default to indicate output
+knitr::opts_chunk$set(
+  comment = NA,
+  cache = TRUE,
+  fig.height = 8,
+  fig.width = 10
+)
+```
+
+```{r}
+library(DESeq2)
+library(gplots)
+library(RColorBrewer)
+library(data.table)
+library(ggplot2)
+
+thisPath <- getwd()
+
+data <- readRDS("../../data/data.Rds")
+data <- as.matrix(data)
+
+coldata = data.frame(row.names = colnames(data), virus = unlist(lapply(colnames(data), function (x) substring(unlist(strsplit(x, "[.]"))[1],1,1))), diet = unlist(lapply(colnames(data), function (x) substring(unlist(strsplit(x, "[.]"))[1],2,2))), treatment = unlist(lapply(colnames(data), function (x) unlist(strsplit(x, "[.]"))[1])))
+
+dds = DESeqDataSetFromMatrix(countData = data, colData = coldata, design = ~ virus + diet + virus:diet)
+
+dds <- DESeq(dds)
+
+# Intercept, virus_V_vs_N, diet_R_vs_C, virusV.dietR
+resultsNames(dds)
+
+res <- results(dds, name="Intercept")
+length(which((res@listData)$padj <0.05))
+
+res <- results(dds, name="virus_V_vs_N")
+length(which((res@listData)$padj <0.05))
+
+res <- results(dds, name="diet_R_vs_C")
+length(which((res@listData)$padj <0.05))
+
+res <- results(dds, name="virusV.dietR")
+length(which((res@listData)$padj <0.05))
+
+```

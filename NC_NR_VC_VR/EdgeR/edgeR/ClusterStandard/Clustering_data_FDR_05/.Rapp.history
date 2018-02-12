@@ -1,0 +1,2 @@
+load("/Users/lindz/CompareViz/NC_NR_VC_VR/EdgeR/edgeR/ClusterStandard/Clustering_data_FDR_05/Sig_4_1.Rds")
+load("/Users/lindz/CompareViz/NC_NR_VC_VR/EdgeR/edgeR/ClusterStandard/Clustering_data_FDR_05/Sig_4_2.Rds")
